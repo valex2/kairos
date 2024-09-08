@@ -9,9 +9,8 @@ import storage
 import busio
 import gfx  # graphics and shape rendering module
 from digitalio import DigitalInOut
-import os
 
-# Initialize I2C, SPI, and sensors (same as original code)
+# Initialize I2C, SPI, and sensors
 i2c = busio.I2C(scl=board.PA13, sda=board.PA12)
 light_sensor = adafruit_ltr329_ltr303.LTR329(i2c)
 
@@ -38,10 +37,13 @@ pin_D10.direction = digitalio.Direction.OUTPUT
 pin_NEO = digitalio.DigitalInOut(board.PB03)
 pin_NEO.direction = digitalio.Direction.OUTPUT
 
-# Open CSV file on the SD card for writing data
+# Open CSV file before the loop
 with open("/sd/data_log.csv", "w") as f:
     # Write the header row
     f.write("Timestamp,Temperature,Gas,Humidity,Pressure,Altitude,Visible Light,IR Light\n")
+
+# Initialize a counter for timestamp
+log_counter = 0
 
 while True:
     # Get sensor readings
@@ -61,13 +63,19 @@ while True:
     oled.text(f"Humidity: {relative_humidity:.1f} %", 0, 20, 1)
     oled.text(f"Pressure: {pressure:.1f} hPa", 0, 30, 1)
     oled.text(f"Altitude: {altitude:.1f} m", 0, 40, 1)
-    oled.text(f"Vis:{vis:.1f}|IR:{IR:.1f} lux︎", 0, 50, 1)
+    oled.text(f"Vis:{vis:.1f}|IR:{IR:.1f} lux", 0, 50, 1)
     oled.show()
 
+    # Create a simplified timestamp based on log_counter
+    log_counter += 0.3 # this is in seconds
+
     # Log readings to SD card
-    timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-    with open("/sd/data_log.csv", "a") as f:
-        f.write(f"{timestamp},{temperature:.1f},{gas},{relative_humidity:.1f},{pressure:.1f},{altitude:.1f},{vis:.1f},{IR:.1f}\n")
+    try:
+        with open("/sd/data_log.csv", "a") as f:
+            f.write(f"{log_counter},{temperature:.1f},{gas},{relative_humidity:.1f},{pressure:.1f},{altitude:.1f},{vis:.1f},{IR:.1f}\n")
+            f.flush()  # Ensure data is written to the SD card
+    except OSError as e:
+        print(f"Error writing to SD card: {e}")
 
     # Blink LEDs
     pin_D10.value = True
@@ -77,4 +85,4 @@ while True:
     pin_NEO.value = False
 
     # Delay to log data once every second
-    time.sleep(1)
+    time.sleep(0.2)
