@@ -1,0 +1,2 @@
+Adafruit CircuitPython 7.3.3-dirty on 2023-12-12; Adafruit Feather M4 Express with samd51j19
+Board ID:ee156_samd51j19_no_flash_no_crystal
