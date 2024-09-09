@@ -6,10 +6,10 @@ import os
 ####################################################################
 # This script reads a CSV file containing data from Kairos and plots it.
 # Example usage:
-# python3 plot_logged_data.py /path/to/data.csv
+# python3 plot_logged_data.py /path/to/data.csv --cutoff 16000
 ####################################################################
 
-def plot_data(file_path):
+def plot_data(file_path, cutoff):
     # Check if the file exists
     if not os.path.isfile(file_path):
         print(f"File '{file_path}' does not exist.")
@@ -29,14 +29,20 @@ def plot_data(file_path):
         reader = csv.reader(f)
         next(reader)  # Skip the header row
         for row in reader:
-            timestamps.append(float(row[0]))
-            temperatures.append(float(row[1]))
-            gases.append(float(row[2]))
-            humidities.append(float(row[3]))
-            pressures.append(float(row[4]))
-            altitudes.append(float(row[5]))
-            visible_lights.append(float(row[6]))
-            ir_lights.append(float(row[7]))
+            timestamp = float(row[0])
+            if timestamp >= cutoff:
+                timestamps.append(timestamp)
+                temperatures.append(float(row[1]))
+                gases.append(float(row[2]))
+                humidities.append(float(row[3]))
+                pressures.append(float(row[4]))
+                altitudes.append(float(row[5]))
+                visible_lights.append(float(row[6]))
+                ir_lights.append(float(row[7]))
+
+    if not timestamps:
+        print(f"No data found for timestamps >= {cutoff}.")
+        return
 
     # Create a single plot with multiple panels (subplots) in 3 columns and 3 rows
     fig, axs = plt.subplots(3, 3, figsize=(15, 10))
@@ -99,7 +105,7 @@ def plot_data(file_path):
 
     # Create the output filename based on the input filename
     base_name = os.path.splitext(os.path.basename(file_path))[0]
-    output_file_path = os.path.join("Plots", f"{base_name}.png")
+    output_file_path = os.path.join("Plots", f"{base_name}_cutoff_{cutoff}.png")
 
     # Save the plot as a PNG file
     plt.savefig(output_file_path, dpi=300)
@@ -108,11 +114,12 @@ def plot_data(file_path):
     plt.show()
 
 if __name__ == "__main__":
-    # Set up argument parser to accept file path from command line
+    # Set up argument parser to accept file path and cutoff from command line
     parser = argparse.ArgumentParser(description="Plot sensor data from a CSV file.")
     parser.add_argument("file_path", type=str, help="Absolute path to the CSV data file.")
+    parser.add_argument("--cutoff", type=float, default=0, help="Timestamp cutoff to start plotting from.")
     
     args = parser.parse_args()
 
-    # Call the plot function with the provided file path
-    plot_data(args.file_path)
+    # Call the plot function with the provided file path and cutoff value
+    plot_data(args.file_path, args.cutoff)
