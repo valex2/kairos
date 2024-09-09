@@ -1,0 +1,38 @@
+#,Reference,Qty (New),Value,Footprint,DNP,Supplier 1,Supplier 1 S/N,MFR,MFR S/N
+1,BOM1,6,10uH 0805,,,https://www.digikey.com/en/products/detail/taiyo-yuden/LBR2012T100K/1788937,587-2045-1-ND,Taiyo Yuden,LBR2012T100K
+2,BOM2,20,0 Ohm Jumper,,,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805ZT0R00/1756901,RMCF0805ZT0R00CT-ND,Stackpole Electronics Inc,RMCF0805ZT0R00
+3,BOM3,16,10kO 0805,,,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805JT10K0/1757762,RMCF0805JT10K0CT-ND,Stackpole Electronics Inc,RMCF0805JT10K0
+4,BOM4,6,20pF 0603,,,https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10C200JB8NNNC/3886845,1276-1187-1-ND,Samsung Electro-Mechanics,CL10C200JB8NNNC
+5,BOM5,6,24pF 0603,,,https://www.digikey.com/en/products/detail/murata-electronics/GRM1885C1H240JA01D/586918,490-1412-1-ND,Murata Electronics,GRM1885C1H240JA01D
+6,BOM6,1,LiPo 3.7V 2.5AH,,,https://www.adafruit.com/product/328,328,,
+7,BOM7,1,OLED Display,,,https://www.digikey.com/en/products/detail/adafruit-industries-llc/938/5774238,1528-1512-ND,Adafruit Industries LLC,938
+8,BOM8,6,Header Pins,,,https://www.digikey.com/en/products/detail/adam-tech/PH1-09-UA/9830689,2057-PH1-09-UA-ND,Adam Tech,PH1-09-UA
+9,"C1, C2",8,22pF,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,,https://www.digikey.com/en/products/detail/kemet/C0603C220J5GAC7867/411055,399-C0603C220J5GAC7867CT-ND,KEMET,C0603C220J5GAC7867
+10,"C3, C4, C21, C22",16,0.1u,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,,https://www.digikey.com/en/products/detail/yageo/CC0603KRX7R7BB104/302822,311-1088-1-ND,YAGEO,CC0603KRX7R7BB104
+11,"C5, C6, C7, C9, C12, C15, C16, C19, C20",36,1u,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,,https://www.digikey.com/en/products/detail/yageo/CC0603KRX7R7BB105/2833611,311-1446-1-ND,YAGEO,CC0603KRX7R7BB105
+12,"C8, C10, C13, C14, C18",20,10u,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,,https://www.digikey.com/en/products/detail/taiyo-yuden/JMK107ABJ106MA-T/4970720,587-5869-1-ND,Taiyo Yuden,JMK107ABJ106MA-T
+13,"C11, C17",8,4.7u,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,,https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A475KP8NNNC/3886702,1276-1044-1-ND,Samsung Electro-Mechanics,CL10A475KP8NNNC
+14,D1,1,WS2812B,LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm,,https://www.adafruit.com/product/4684,WS2812B,Adafruit,
+15,D2,3,Schottky,Diode_SMD:D_SOD-123F,,https://www.digikey.com/en/products/detail/onsemi/MBR120LSFT1G/1748986,MBR120LSFT1GOSCT-ND,onsemi,MBR120LSFT1G
+16,D3,3,LED,LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/qt-brightek-qtb/QBLP631-IG/4814682,1516-1084-1-ND,QT Brightek (QTB),QBLP631-IG
+20,J4,2,3221-10-0300-00,Connector:CONN10_3221-10-0300-00_CNC,,https://www.digikey.com/en/products/detail/cnc-tech/3221-10-0300-00/4878946,1175-1735-ND,CNC Tech,3221-10-0300-00
+23,J10,3,10118192-0001LF,digikey-footprints:USB_Micro_B_Female_10118192,,https://www.digikey.com/en/products/detail/amphenol-icc-fci/10118192-0001LF/2785387,609-4613-1-ND,Amphenol ICC (FCI),10118192-0001LF
+24,J13,3,1935161,digikey-footprints:Terminal_Block_D1.3mm_P5mm,,https://www.digikey.com/en/products/detail/phoenix-contact/1935161/568614?s=N4IgTCBcDa4OxwLQEYBsqkDkAiIC6AvkA,277-1667-ND,Phoenix Contact,1935161
+25,J14,3,2908-05WB-MG,digikey-footprints:MicroSD_2908-05WB-MG,,https://www.digikey.com/en/products/detail/3m/2908-05WB-MG/1242497?s=N4IgTCBcDaIMwFkCsA2ADAdgMIBUC0AcgCIgC6AvkA,3M5607CT-ND,3M,2908-05WB-MG
+29,L1,4,31 Ohm at 100 MHz,Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder,,https://www.digikey.com/en/products/detail/laird-signal-integrity-products/HI0805Q310R-10/806633,240-2394-1-ND,Laird-Signal Integrity Products,HI0805Q310R-10
+30,Q1,4,DMG3415U-7,Package_TO_SOT_SMD:SOT-23-3,,https://www.digikey.com/en/products/detail/diodes-incorporated/DMG3415U-7/2052768,DMG3415UDICT-ND,Diodes Incorporated,DMG3415U-7
+31,"R1, R2, R5",12,100k,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100KL/727544,311-100KCRCT-ND,YAGEO,RC0805FR-07100KL
+32,"R3, R4, R7",12,10K,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805JT10K0/1757762,RMCF0805JT10K0CT-ND,Stackpole Electronics Inc,RMCF0805JT10K0
+33,R6,4,1K,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/yageo/RC0805FR-071KL/727444,311-1.00KCRCT-ND,YAGEO,RC0805FR-071KL
+34,R8,4,2k,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-6ENF2001V/111341,P2.00KCCT-ND,Panasonic Electronic Components,ERJ-6ENF2001V
+35,"R9, R10, R21, R22",16,3.3k,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805JT3K30/1757905,RMCF0805JT3K30CT-ND,Stackpole Electronics Inc,RMCF0805JT3K30
+36,"R11, R12, R13, R14, R19, R20, R23, R24",32,0,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805ZT0R00/1756901,RMCF0805ZT0R00CT-ND,Stackpole Electronics Inc,RMCF0805ZT0R00
+37,"R15, R16, R17, R18",16,47k,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805JT47K0/1757842,RMCF0805JT47K0CT-ND,Stackpole Electronics Inc,RMCF0805JT47K0
+38,S1,4,B3U-1000P,digikey-footprints:Switch_Tactile_SMD_B3U-1000P,,https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/B3U-1000P/1534338?s=N4IgTCBcDaIMoHUCMAGMKDCAVAtAOQBEQBdAXyA,SW1020CT-ND,Omron Electronics Inc-EMC Div,B3U-1000P
+40,U1,3,ATSAMD51J19A-AUT,SAMD51J19A-AUT:TQFP64_PT_MCH,,https://www.digikey.com/en/products/detail/microchip-technology/ATSAMD51J19A-AUT/7390302,ATSAMD51J19A-AUTCT-ND,Microchip Technology,ATSAMD51J19A-AUT
+41,U2,3,MCP73831,Package_TO_SOT_SMD:SOT-23-5,,https://www.digikey.com/en/products/detail/microchip-technology/MCP73831T-2ACI-OT/964301,MCP73831T-2ACI/OTCT-ND,Microchip Technology,MCP73831T-2ACI/OT
+42,U3,3,AP2112k-3.3V,Package_TO_SOT_SMD:SOT-23-5,,https://www.digikey.com/en/products/detail/diodes-incorporated/AP2112K-3-3TRG1/4470746,AP2112K-3.3TRG1DICT-ND,Diodes Incorporated,AP2112K-3.3TRG1
+43,U4,3,LTR-329ALS-01,LTR329:LTR-329ALS-01_LTO,,https://www.digikey.com/en/products/detail/liteon/LTR-329ALS-01/4847334?s=N4IgTCBcDaIDYBcBOBmMBOEBdAvkA,160-2160-1-ND,Lite-On Inc.,LTR-329ALS-01
+44,"U5, U7",6,74AHC1G125,Package_TO_SOT_SMD:SOT-23-5_HandSoldering,,https://www.digikey.com/en/products/detail/texas-instruments/SN74AHC1G125DBVR/373801,296-8744-1-ND,Texas Instruments,SN74AHC1G125DBVR
+45,U6,3,BME688,Package_LGA:Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering,,https://www.digikey.com/en/products/detail/bosch-sensortec/BME688/13681261?s=N4IgTCBcDaIBxjgWgEIFkCiA2OcDCAKkgHIAiIAugL5A,828-BME688CT-ND,Bosch Sensortec,BME688
+46,X1,4,32.768kHz,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,,https://www.digikey.com/en/products/detail/hosonic-electronic-co-ltd/ETST00327000JE/19908538,3186-ETST00327000JECT-ND,"Hosonic Electronic Co., Ltd",ETST00327000JE
