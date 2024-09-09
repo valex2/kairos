@@ -58,12 +58,12 @@ while True:
 
     # Display readings on OLED
     oled.fill(0)
-    oled.text(f"Temp: {temperature:.1f} C", 0, 0, 1)
-    oled.text(f"Gas: {gas} ohms", 0, 10, 1)
-    oled.text(f"Humidity: {relative_humidity:.1f} %", 0, 20, 1)
-    oled.text(f"Pressure: {pressure:.1f} hPa", 0, 30, 1)
-    oled.text(f"Altitude: {altitude:.1f} m", 0, 40, 1)
-    oled.text(f"Vis:{vis:.1f}|IR:{IR:.1f} lux", 0, 50, 1)
+    oled.text(f"Temp: {temperature:.1f}C", 0, 0, 1)
+    oled.text(f"Gas: {gas}ohms", 0, 10, 1)
+    oled.text(f"Humidity: {relative_humidity:.1f}%", 0, 20, 1)
+    oled.text(f"Pressure: {pressure:.1f}hPa", 0, 30, 1)
+    oled.text(f"Altitude: {altitude:.1f}m", 0, 40, 1)
+    oled.text(f"Vis:{vis:.1f}|IR:{IR:.1f}lux", 0, 50, 1)
     oled.show()
 
     # Create a simplified timestamp based on log_counter
@@ -80,9 +80,6 @@ while True:
     # Blink LEDs
     pin_D10.value = True
     pin_NEO.value = True
-    time.sleep(0.1)
+    time.sleep(0.2) # frequency of data sampling
     pin_D10.value = False
     pin_NEO.value = False
-
-    # Delay to log data once every second
-    time.sleep(0.2)

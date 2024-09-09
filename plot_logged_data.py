@@ -38,8 +38,8 @@ def plot_data(file_path):
             visible_lights.append(float(row[6]))
             ir_lights.append(float(row[7]))
 
-    # Create a single plot with multiple panels (subplots) in 2 columns and 3 rows
-    fig, axs = plt.subplots(3, 2, figsize=(12, 10))
+    # Create a single plot with multiple panels (subplots) in 3 columns and 3 rows
+    fig, axs = plt.subplots(3, 3, figsize=(15, 10))
 
     # Plot temperature
     axs[0, 0].plot(timestamps, temperatures, label="Temperature (°C)", color="red")
@@ -56,32 +56,43 @@ def plot_data(file_path):
     axs[0, 1].set_title("Humidity")
 
     # Plot pressure
-    axs[1, 0].plot(timestamps, pressures, label="Pressure (hPa)", color="green")
-    axs[1, 0].set_xlabel("Time (s)")
-    axs[1, 0].set_ylabel("Pressure (hPa)")
-    axs[1, 0].legend()
-    axs[1, 0].set_title("Pressure")
+    axs[0, 2].plot(timestamps, pressures, label="Pressure (hPa)", color="green")
+    axs[0, 2].set_xlabel("Time (s)")
+    axs[0, 2].set_ylabel("Pressure (hPa)")
+    axs[0, 2].legend()
+    axs[0, 2].set_title("Pressure")
 
     # Plot altitude
-    axs[1, 1].plot(timestamps, altitudes, label="Altitude (m)", color="purple")
-    axs[1, 1].set_xlabel("Time (s)")
-    axs[1, 1].set_ylabel("Altitude (m)")
-    axs[1, 1].legend()
-    axs[1, 1].set_title("Altitude")
+    axs[1, 0].plot(timestamps, altitudes, label="Altitude (m)", color="purple")
+    axs[1, 0].set_xlabel("Time (s)")
+    axs[1, 0].set_ylabel("Altitude (m)")
+    axs[1, 0].legend()
+    axs[1, 0].set_title("Altitude")
 
     # Plot visible light
-    axs[2, 0].plot(timestamps, visible_lights, label="Visible Light (lux)", color="orange")
-    axs[2, 0].set_xlabel("Time (s)")
-    axs[2, 0].set_ylabel("Light Intensity (lux)")
-    axs[2, 0].legend()
-    axs[2, 0].set_title("Visible Light")
+    axs[1, 1].plot(timestamps, visible_lights, label="Visible Light (lux)", color="orange")
+    axs[1, 1].set_xlabel("Time (s)")
+    axs[1, 1].set_ylabel("Light Intensity (lux)")
+    axs[1, 1].legend()
+    axs[1, 1].set_title("Visible Light")
 
     # Plot IR light
-    axs[2, 1].plot(timestamps, ir_lights, label="IR Light (lux)", color="brown")
-    axs[2, 1].set_xlabel("Time (s)")
-    axs[2, 1].set_ylabel("Light Intensity (lux)")
-    axs[2, 1].legend()
-    axs[2, 1].set_title("IR Light")
+    axs[1, 2].plot(timestamps, ir_lights, label="IR Light (lux)", color="brown")
+    axs[1, 2].set_xlabel("Time (s)")
+    axs[1, 2].set_ylabel("Light Intensity (lux)")
+    axs[1, 2].legend()
+    axs[1, 2].set_title("IR Light")
+
+    # Plot gases
+    axs[2, 0].plot(timestamps, gases, label="AQI (ppm)", color="cyan")
+    axs[2, 0].set_xlabel("Time (s)")
+    axs[2, 0].set_ylabel("AQI (ppm)")
+    axs[2, 0].legend()
+    axs[2, 0].set_title("AQI")
+
+    # Remove unused plots (second row, third column, and third row, second and third columns)
+    fig.delaxes(axs[2, 1])  # Remove subplot at (2, 1)
+    fig.delaxes(axs[2, 2])  # Remove subplot at (2, 2)
 
     # Adjust layout to prevent overlap
     plt.tight_layout()
